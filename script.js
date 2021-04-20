@@ -90,19 +90,24 @@ function clearStatusClass(element) {
 }
 
 function timer(){
-    var sec = 74;
+    var sec = 10;
     var timer = setInterval(function(){
         timeLeftEl.innerHTML = sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
-            sendMessage()
+            endMessage()
         }
     }, 1000);
 }
 
-function sendMessage() {
+function endMessage() {
     timeLeftEl.textContent = "Time's Up!"
+    startButton.classList.remove('hide')
+    startButton.innerText = 'Try Again?'
+    questionElement.innerText = " "
+    answerButtonsElement.innerText = " "
+
 }
 
 const questions = [
