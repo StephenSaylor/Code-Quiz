@@ -90,7 +90,7 @@ function clearStatusClass(element) {
 }
 
 function timer(){
-    var sec = 10;
+    var sec = 74;
     var timer = setInterval(function(){
         timeLeftEl.innerHTML = sec;
         sec--;
