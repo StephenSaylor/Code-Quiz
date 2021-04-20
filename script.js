@@ -2,11 +2,12 @@ const startButton = document.getElementById('start-btn')
 const questionBoxElement = document.getElementById('question-box')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const submitButtonElement = document.getElementById('submit')
 var scoreEl = document.getElementById('score')
 var timeLeftEl = document.getElementById('time-left')
 
 var score = 0
-var timeLeft;
+var timeLeft = timeLeftEl
 
 
 startButton.addEventListener('click', startQuiz) 
@@ -94,7 +95,7 @@ function timer(){
     var timer = setInterval(function(){
         timeLeftEl.innerHTML = sec;
         sec--;
-        if (sec < 0) {
+        if (sec < 0 || shuffledQuestions.length < currentQuestionIndex + 1) {
             clearInterval(timer);
             endMessage()
         }
@@ -107,6 +108,7 @@ function endMessage() {
     startButton.innerText = 'Try Again?'
     questionElement.innerText = " "
     answerButtonsElement.innerText = " "
+    submitButtonElement.classList.remove('hide')
 
 }
 
