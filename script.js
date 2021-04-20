@@ -2,9 +2,11 @@ const startButton = document.getElementById('start-btn')
 const questionBoxElement = document.getElementById('question-box')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const submitFormElement = document.getElementById('submit-form')
 const submitButtonElement = document.getElementById('submit')
 var scoreEl = document.getElementById('score')
 var timeLeftEl = document.getElementById('time-left')
+
 
 var score = 0
 var timeLeft = timeLeftEl
@@ -108,8 +110,7 @@ function endMessage() {
     startButton.innerText = 'Try Again?'
     questionElement.innerText = " "
     answerButtonsElement.innerText = " "
-    submitButtonElement.classList.remove('hide')
-
+    submitFormElement.classList.remove('hide')
 }
 
 const questions = [
