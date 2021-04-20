@@ -6,7 +6,7 @@ var scoreEl = document.getElementById('score')
 var timeLeftEl = document.getElementById('time-left')
 
 var score = 0
-var timeLeft = 0
+var timeLeft;
 
 
 startButton.addEventListener('click', startQuiz) 
@@ -94,10 +94,15 @@ function timer(){
     var timer = setInterval(function(){
         timeLeftEl.innerHTML = sec;
         sec--;
-        if (sec <= 0) {
+        if (sec < 0) {
             clearInterval(timer);
+            sendMessage()
         }
     }, 1000);
+}
+
+function sendMessage() {
+    timeLeftEl.textContent = "Time's Up!"
 }
 
 const questions = [
